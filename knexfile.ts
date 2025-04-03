@@ -1,7 +1,15 @@
+import { afterEach } from "node:test";
+
 export default {
   client: "sqlite3",
   connection: {
     filename: "./src/database/database.db",
+  },
+
+  pool: {
+    afterEach: (connection: any, done: any) => {
+      connection.run("PRAGMA foreign_keys = ON").done();
+    },
   },
 
   useNullAsDefaut: true,
