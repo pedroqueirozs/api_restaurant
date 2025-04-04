@@ -1,5 +1,3 @@
-import { afterEach } from "node:test";
-
 export default {
   client: "sqlite3",
   connection: {
@@ -8,7 +6,7 @@ export default {
 
   pool: {
     afterCreate: (connection: any, done: any) => {
-      connection.run("PRAGMA foreign_keys = ON")
+      connection.run("PRAGMA foreign_keys = ON");
       done();
     },
   },
