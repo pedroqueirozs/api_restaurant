@@ -11,7 +11,7 @@ export default {
     },
   },
 
-  useNullAsDefaut: true,
+  useNullAsDefault: true,
   migrations: {
     extensions: "ts",
     directory: "./src/database/migrations",
