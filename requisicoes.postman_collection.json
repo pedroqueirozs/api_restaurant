@@ -1,0 +1,290 @@
+{
+	"info": {
+		"_postman_id": "29f5fb6b-4695-4a51-b8fb-ff591ea5810d",
+		"name": "API Restaurant",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43335997"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{_BASE_URL}}/products",
+							"host": [
+								"{{_BASE_URL}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Macarronada\",\n\t\"price\": 67\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{_BASE_URL}}/products",
+							"host": [
+								"{{_BASE_URL}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{_BASE_URL}}/products/22",
+							"host": [
+								"{{_BASE_URL}}"
+							],
+							"path": [
+								"products",
+								"22"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Sal Picao com Salsicha\",\n\t\"price\": 115\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{_BASE_URL}}/products/26",
+							"host": [
+								"{{_BASE_URL}}"
+							],
+							"path": [
+								"products",
+								"26"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tables",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{_BASE_URL}}/tables",
+							"host": [
+								"{{_BASE_URL}}"
+							],
+							"path": [
+								"tables"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"table_session_id\":2,\n \"product_id\": 22,\n  \"quantity\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{_BASE_URL}}/orders",
+							"host": [
+								"{{_BASE_URL}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Index By Table Session",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{_BASE_URL}}/orders/table-session/2",
+							"host": [
+								"{{_BASE_URL}}"
+							],
+							"path": [
+								"orders",
+								"table-session",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show By Table Session",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{_BASE_URL}}/orders/table-session/2/total",
+							"host": [
+								"{{_BASE_URL}}"
+							],
+							"path": [
+								"orders",
+								"table-session",
+								"2",
+								"total"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tables Session",
+			"item": [
+				{
+					"name": "open",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"table_id\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{_BASE_URL}}/tables-sessions",
+							"host": [
+								"{{_BASE_URL}}"
+							],
+							"path": [
+								"tables-sessions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Close",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{_BASE_URL}}/tables-sessions/1",
+							"host": [
+								"{{_BASE_URL}}"
+							],
+							"path": [
+								"tables-sessions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{_BASE_URL}}/tables-sessions",
+							"host": [
+								"{{_BASE_URL}}"
+							],
+							"path": [
+								"tables-sessions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "endpoint",
+			"value": "products\n",
+			"type": "string"
+		}
+	]
+}
